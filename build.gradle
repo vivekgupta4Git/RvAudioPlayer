@@ -7,4 +7,19 @@ plugins {
     id 'com.android.application' version '7.4.0' apply false
     id 'com.android.library' version '7.4.0' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.0' apply false
+    id 'maven-publish'
+}
+publishing {
+    publications{
+        maven(MavenPublication){
+            groupId = 'com.rubyvivek'
+            artifactId = 'rv_audioplayer'
+            version = "1"
+
+            pom{
+                description = "A Simple Audio Player"
+            }
+        }
+
+    }
 }
