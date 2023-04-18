@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/container"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingBottom="@dimen/dimen_10dp"
+    android:background="@drawable/audio_background_rounded">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="H,3:2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/playButton"
+        android:id="@+id/backgroundImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        app:layout_constraintTop_toBottomOf="@id/backgroundImage"
+        android:scaleType="fitXY"
+        android:id="@+id/playButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="@dimen/dimen_4dp"
+        android:contentDescription="audio play"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/round_play_arrow_24" />
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seeker"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/playButton"
+        app:layout_constraintEnd_toStartOf="@id/audioFile"
+        app:layout_constraintStart_toEndOf="@id/playButton"
+        app:layout_constraintTop_toTopOf="@id/playButton" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/startPosText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:text="0:00"
+        android:textSize="@dimen/dimen_10sp"
+        app:layout_constraintStart_toStartOf="@id/seeker"
+        app:layout_constraintTop_toBottomOf="@id/seeker" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/endPosText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_15dp"
+        android:text="0:00"
+        android:textSize="@dimen/dimen_10sp"
+        app:layout_constraintEnd_toEndOf="@id/seeker"
+        app:layout_constraintTop_toBottomOf="@id/seeker" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/audioFile"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="@dimen/dimen_4dp"
+        android:contentDescription="audio file"
+        app:layout_constraintBottom_toBottomOf="@id/playButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/playButton"
+        app:srcCompat="@drawable/outline_audio_file_24" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</merge>
